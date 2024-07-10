@@ -1,0 +1,14 @@
+.btn {
+  cursor: pointer;
+  font-size: 2.5rem;
+  padding-block: 1.5rem;
+
+  &-clear {
+    background-color: transparent;
+  }
+
+  &-alter {
+    background-color: #1c2405;
+    color: #a0c13a;
+  }
+}

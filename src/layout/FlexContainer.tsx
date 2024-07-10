@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type FlexContainerProps = {
-  children?: ReactNode;
+  children: ReactNode;
   direction?: "row" | "column";
 };
 
@@ -9,5 +9,7 @@ export default function FlexContainer({
   children,
   direction = "row",
 }: FlexContainerProps) {
-  return <div>{children}</div>;
+  return (
+    <div className={`flex flex-${direction && direction}`}>{children}</div>
+  );
 }

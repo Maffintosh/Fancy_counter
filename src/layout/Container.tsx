@@ -1,13 +1,34 @@
-import { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type ContainerProps = {
-  children?: ReactNode;
-  variant?: "full-bleed" | "large" | "narrow";
+  children: ReactNode;
+  variant?: "full-bleed" | "wide";
+  width?: string;
+  alignContent?: "left" | "center" | "right";
+  rounded?: boolean;
+  radius?: string;
 };
 
 export default function Container({
   children,
-  variant = "full-bleed",
+  variant,
+  width,
+  alignContent,
+  rounded,
+  radius = "1rem",
 }: ContainerProps) {
-  return <div className={`container ${variant && variant}`}>{children}</div>;
+  return (
+    <div
+      className={`container ${alignContent ? alignContent : ""}`}
+      style={
+        {
+          "--max-width": width,
+          "--radius": rounded ? radius : "",
+        } as CSSProperties
+      }
+      data-type={variant ? variant : ""}
+    >
+      {children}
+    </div>
+  );
 }

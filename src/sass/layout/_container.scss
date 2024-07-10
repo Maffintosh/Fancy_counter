@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+.container {
+  --max-width: #{$container-max-width};
+  --padding: #{$container-inline-padding} * 2;
+
+  width: min(100% - var(--padding), var(--max-width));
+  margin-inline: auto;
+  background-color: #bff226;
+  border-radius: var(--radius);
+  overflow: hidden;
+  
+  /* Variants */
+  &[data-type="wide"] {
+    --max-width: #{$container-max-width-wide};
+  }
+
+  &[data-type="full-bleed"] {
+    --max-width: 100%;
+    --padding: 0px;
+  }
+
+  /* Alignment */
+  &.center {
+    text-align: center;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}
