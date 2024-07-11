@@ -1,4 +1,4 @@
-import type { ReactNode, ComponentProps, Dispatch, SetStateAction } from "react";
+import type { ReactNode, ComponentProps } from "react";
 
 type ButtonProps = {
   children?: ReactNode;

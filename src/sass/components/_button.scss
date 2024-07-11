@@ -1,14 +1,27 @@
 .btn {
   cursor: pointer;
   font-size: 2.5rem;
-  padding-block: 1.5rem;
+  transition-property: opacity;
+  transition-duration: .3s;
+  transition-timing-function: ease;
 
   &-clear {
+    border: none;
     background-color: transparent;
+    opacity: .3;
+
+    &:hover {
+      opacity: .6;
+    }
   }
 
   &-alter {
+    padding-block: 1.5rem;
     background-color: #1c2405;
     color: #a0c13a;
+
+    &:active {
+      opacity: .95;
+    }
   }
 }
