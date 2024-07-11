@@ -1,27 +1,40 @@
+@use "../abstracts" as *;
+
 .btn {
   cursor: pointer;
   font-size: 2.5rem;
   transition-property: opacity;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-timing-function: ease;
 
   &-clear {
     border: none;
     background-color: transparent;
-    opacity: .3;
+    opacity: 0.3;
 
     &:hover {
-      opacity: .6;
+      opacity: 0.6;
     }
   }
 
   &-alter {
     padding-block: 1.5rem;
-    background-color: #1c2405;
-    color: #a0c13a;
+    background-color: clr(primary, 900);
+    color: clr(primary, 600);
 
-    &:active {
-      opacity: .95;
+    &:hover,
+    :active {
+      opacity: 0.95;
     }
   }
+
+  &-github {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: clr(primary, 900);
+    color: clr(secondary, 400);
+    flex-grow: 0.1;
+  }
 }
+

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Counter from "./components/Counter";
 import Container from "./layout/Container";
-import "./sass/main.scss";
+import Counter from "./components/Counter";
 import CountButtons from "./components/CountButtons";
+import "./sass/main.scss";
 
 export default function App() {
   const [count, setCount] = useState(0);

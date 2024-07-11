@@ -2,7 +2,6 @@ import type { CSSProperties, ReactNode } from "react";
 
 type ContainerProps = {
   children: ReactNode;
-  variant?: "full-bleed" | "wide";
   width?: string;
   alignContent?: "left" | "center" | "right";
   rounded?: boolean;
@@ -11,7 +10,6 @@ type ContainerProps = {
 
 export default function Container({
   children,
-  variant,
   width,
   alignContent,
   rounded,
@@ -26,7 +24,6 @@ export default function Container({
           "--radius": rounded ? radius : "",
         } as CSSProperties
       }
-      data-type={variant ? variant : ""}
     >
       {children}
     </div>

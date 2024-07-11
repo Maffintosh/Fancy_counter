@@ -1,24 +1,14 @@
 @use "../abstracts/" as *;
 
 .container {
-  --max-width: #{$container-max-width};
-  --padding: #{$container-inline-padding} * 2;
+  --max-width: 60rem;
+  --padding: 2rem;
 
   width: min(100% - var(--padding), var(--max-width));
   margin-inline: auto;
-  background-color: #bff226;
+  background-color: clr(primary, 400);
   border-radius: var(--radius);
   overflow: hidden;
-  
-  /* Variants */
-  &[data-type="wide"] {
-    --max-width: #{$container-max-width-wide};
-  }
-
-  &[data-type="full-bleed"] {
-    --max-width: 100%;
-    --padding: 0px;
-  }
 
   /* Alignment */
   &.center {

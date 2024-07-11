@@ -15,10 +15,10 @@ export default function Counter({ count, setCount }: CounterProps) {
   return (
     <Section spacer="6rem">
       <Stack spacer="2rem">
-        <h2>Fancy Counter</h2>
+        <h1>{count === 5 ? "Buy Pro version" : "Fancy Counter"}</h1>
         <p>{count}</p>
         <Button classes="btn btn-clear" onClick={handleClick}>
-          <ResetIcon style={{width: "3rem", height: "3rem"}}/>
+          <ResetIcon className="reset-icon"/>
         </Button>
       </Stack>
     </Section>

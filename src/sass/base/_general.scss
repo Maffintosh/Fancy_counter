@@ -1,20 +1,27 @@
+@use "../abstracts/" as *;
+
 body {
   font-family: "Montserrat", sans-serif;
   display: grid;
   align-items: center;
   height: 100vh;
-  background-image: radial-gradient(ellipse, #385300, #212900);
+  background-image: radial-gradient(ellipse, clr(primary, 700), clr(primary, 950));
 }
 
-h2 {
+button {
+  border: none;
+}
+
+h1 {
   font-size: 2rem;
   width: 10ch;
   text-transform: uppercase;
   margin-inline: auto;
-  color: #446109;
+  color: clr(primary, 800);
 }
 
 p {
   font-size: 8rem;
+  color: clr(primary, 800);
   /* font-weight: 500; */
 }

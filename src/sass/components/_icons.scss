@@ -1,0 +1,26 @@
+.reset-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.github-icon {
+  width: 4rem;
+  height: 4rem;
+  animation-name: icon-apear;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+
+.count-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+@keyframes icon-apear {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: none;
+  }
+}
