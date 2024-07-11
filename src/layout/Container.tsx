@@ -6,6 +6,7 @@ type ContainerProps = {
   alignContent?: "left" | "center" | "right";
   rounded?: boolean;
   radius?: string;
+  locked: boolean;
 };
 
 export default function Container({
@@ -14,10 +15,11 @@ export default function Container({
   alignContent,
   rounded,
   radius = "1rem",
+  locked,
 }: ContainerProps) {
   return (
     <div
-      className={`container ${alignContent ? alignContent : ""}`}
+      className={`container ${alignContent ? alignContent : ""} ${locked ? "locked" : ""}`}
       style={
         {
           "--max-width": width,

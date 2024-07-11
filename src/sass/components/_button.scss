@@ -3,9 +3,7 @@
 .btn {
   cursor: pointer;
   font-size: 2.5rem;
-  transition-property: opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
+  @include transition(opacity, .3s, ease);
 
   &-clear {
     border: none;

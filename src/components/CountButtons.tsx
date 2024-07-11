@@ -5,32 +5,31 @@ import Button from "../shared/Button";
 
 type CountButtonsProps = {
   setCount: Dispatch<SetStateAction<number>>;
+  locked: boolean;
 };
 
-export default function CountButtons({ setCount }: CountButtonsProps) {
-  const handleIncrease = () => {
-    setCount((prev) => {
-      if (prev + 1 > 5) {
-        return 5;
-      } else {
-        return prev + 1;
-      }
-    });
+export default function CountButtons({ setCount, locked }: CountButtonsProps) {
+  const handleIncrease = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    setCount((prev) => (prev + 1 > 5 ? 5 : prev + 1));
+
+    // Fix double state changing in focus
+    event.currentTarget.blur();
   };
 
-  const handleDecrease = () => {
-    setCount((prev) => {
-      if (prev - 1 < 0) {
-        return 0;
-      } else {
-        return prev - 1;
-      }
-    });
+  const handleDecrease = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    setCount((prev) => (prev - 1 < 0 ? 0 : prev - 1));
+
+    // Fix double state changing in focus
+    event.currentTarget.blur();
   };
 
   return (
     <FlexContainer>
-      <Button classes="flex-item btn btn-alter" onClick={handleDecrease}>
+      <Button classes="flex-item btn btn-alter" onClick={handleDecrease} disabled={locked}>
         <MinusIcon className="count-icon" />
       </Button>
       <a
@@ -40,7 +39,7 @@ export default function CountButtons({ setCount }: CountButtonsProps) {
       >
         <GitHubLogoIcon className="github-icon" />
       </a>
-      <Button classes="flex-item btn btn-alter" onClick={handleIncrease}>
+      <Button classes="flex-item btn btn-alter" onClick={handleIncrease} disabled={locked}>
         <PlusIcon className="count-icon" />
       </Button>
     </FlexContainer>

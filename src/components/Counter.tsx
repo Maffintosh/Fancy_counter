@@ -6,19 +6,27 @@ import Button from "../shared/Button";
 
 type CounterProps = {
   count: number;
+  locked: boolean;
   setCount: Dispatch<SetStateAction<number>>;
 };
 
-export default function Counter({ count, setCount }: CounterProps) {
-  const handleClick = () => setCount(0);
+export default function Counter({ count, locked, setCount }: CounterProps) {
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    setCount(0);
+
+    // Fix double state changing in focus
+    event.currentTarget.blur();
+  };
 
   return (
     <Section spacer="6rem">
       <Stack spacer="2rem">
-        <h1>{count === 5 ? "Buy Pro version" : "Fancy Counter"}</h1>
+        <h1>{locked ? "Buy Pro version" : "Fancy Counter"}</h1>
         <p>{count}</p>
         <Button classes="btn btn-clear" onClick={handleClick}>
-          <ResetIcon className="reset-icon"/>
+          <ResetIcon className="reset-icon" />
         </Button>
       </Stack>
     </Section>

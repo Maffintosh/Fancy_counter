@@ -9,6 +9,7 @@
   background-color: clr(primary, 400);
   border-radius: var(--radius);
   overflow: hidden;
+  @include transition(background-color, .4s, ease);
 
   /* Alignment */
   &.center {
@@ -21,5 +22,9 @@
 
   &.right {
     text-align: right;
+  }
+
+  &.locked {
+    background-color: clr(primary, 600);
   }
 }
