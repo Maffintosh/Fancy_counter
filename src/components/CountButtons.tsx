@@ -29,17 +29,17 @@ export default function CountButtons({ setCount, locked }: CountButtonsProps) {
 
   return (
     <FlexContainer>
-      <Button classes="flex-item btn btn-alter" onClick={handleDecrease} disabled={locked}>
+      <Button classes="btn btn-alter" onClick={handleDecrease} disabled={locked}>
         <MinusIcon className="count-icon" />
       </Button>
       <a
-        className="flex-item btn-github"
+        className="btn-github"
         href="https://github.com/NerdScriptX?tab=repositories"
         target="_blank"
       >
         <GitHubLogoIcon className="github-icon" />
       </a>
-      <Button classes="flex-item btn btn-alter" onClick={handleIncrease} disabled={locked}>
+      <Button classes="btn btn-alter" onClick={handleIncrease} disabled={locked}>
         <PlusIcon className="count-icon" />
       </Button>
     </FlexContainer>
