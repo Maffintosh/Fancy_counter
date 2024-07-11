@@ -14,9 +14,20 @@ html tag and allow you set any related attribute as props.
 ```tsx
 type ButtonProps = {
   children?: ReactNode;
-  value?: ReactNode;
   classes?: string;
 } & ComponentProps<"button">;
+
+export default function Button({
+  children,
+  classes,
+  ...props
+}: ButtonProps) {
+  return (
+    <button className={classes ? classes : ""} {...props}>
+      {children}
+    </button>
+  );
+}
 ```
 
 - Declaration custom-property in tsx.

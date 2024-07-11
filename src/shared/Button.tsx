@@ -2,19 +2,17 @@ import type { ReactNode, ComponentProps } from "react";
 
 type ButtonProps = {
   children?: ReactNode;
-  value?: ReactNode;
   classes?: string;
 } & ComponentProps<"button">;
 
 export default function Button({
   children,
-  value,
   classes,
   ...props
 }: ButtonProps) {
   return (
     <button className={classes ? classes : ""} {...props}>
-      {value ? value : children ? children : ""}
+      {children}
     </button>
   );
 }
