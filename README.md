@@ -33,11 +33,11 @@ export default function Button({
 - Declaration custom-property in tsx.
 
 ```tsx
-export default function Section({ children, spacer = "2rem" }: SectionProps) {
+export default function Stack({ children, spacer = "1.5rem" }: StackProps) {
   return (
-    <section className="section" style={{ "--spacer": spacer } as CSSProperties}>
+    <div className="stack" style={{ "--spacer": spacer } as CSSProperties}>
       {children}
-    </section>
+    </div>
   );
 }
 ```
