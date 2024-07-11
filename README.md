@@ -8,7 +8,7 @@
 
 ## Intresting examples application of types:
 
-- Intersection type alias with ComponentProps which one accept generic type of any
+- Intersection type alias with ComponentProps which one accepts generic type of any
 html tag and allow you set any related attribute as props.
 
 ```tsx
@@ -19,7 +19,7 @@ type ButtonProps = {
 } & ComponentProps<"button">;
 ```
 
-- Declaration custop-property in tsx.
+- Declaration custom-property in tsx.
 
 ```tsx
 export default function Section({ children, spacer = "2rem" }: SectionProps) {
